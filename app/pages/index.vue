@@ -526,7 +526,7 @@ const handleBooking = async () => {
     <footer
       class="bg-slate-950 text-slate-400 text-center text-[11px] py-6 mt-12 border-t border-slate-900"
     >
-      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.3</p>
+      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.4</p>
       <p class="mt-0.5 text-slate-600 tracking-wider font-medium uppercase">
         Mantenimiento y Alquileres en Playa
       </p>
