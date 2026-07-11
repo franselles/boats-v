@@ -174,7 +174,7 @@ const handleBooking = async () => {
             <p
               class="text-xs font-bold text-slate-500 uppercase tracking-wider"
             >
-              Sectores de recogida disponibles:
+              Sectores de alquiler disponibles:
             </p>
             <ul
               class="text-sm space-y-1 list-disc list-inside text-slate-700 font-medium grid grid-cols-2 gap-x-2"
@@ -217,7 +217,7 @@ const handleBooking = async () => {
             <p
               class="text-xs font-bold text-slate-500 uppercase tracking-wider"
             >
-              Sectores de recogida disponibles:
+              Sectores de alquiler disponibles:
             </p>
             <ul
               class="text-sm space-y-1 list-disc list-inside text-slate-700 font-medium grid grid-cols-2 gap-x-2"
@@ -437,10 +437,10 @@ const handleBooking = async () => {
       >
         <div class="text-center">
           <h2 class="text-2xl font-bold text-purple-950">
-            Solicita tu Reserva
+            Solicita tu Alquiler
           </h2>
           <p class="text-xs text-slate-500 mt-1">
-            Elige tu sector y hora para fijar tu hidropedal.
+            Elige tu sector y hora para reservar tu hidropedal.
           </p>
         </div>
 
@@ -474,7 +474,7 @@ const handleBooking = async () => {
             />
           </UFormField>
 
-          <UFormField label="Día de la Reserva">
+          <UFormField label="Día de la reserva">
             <UInput v-model="form.date" type="date" size="lg" required />
           </UFormField>
 
@@ -488,7 +488,7 @@ const handleBooking = async () => {
             />
           </UFormField>
 
-          <UFormField label="Hora del Alquiler">
+          <UFormField label="Hora de la reserva">
             <USelect
               v-model="form.hour"
               :items="listaHoras"
@@ -526,9 +526,9 @@ const handleBooking = async () => {
     <footer
       class="bg-slate-950 text-slate-400 text-center text-[11px] py-6 mt-12 border-t border-slate-900"
     >
-      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.4</p>
+      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.5</p>
       <p class="mt-0.5 text-slate-600 tracking-wider font-medium uppercase">
-        Mantenimiento y Alquileres en Playa
+        Limpieza, Mantenimiento y Alquileres en Playa
       </p>
     </footer>
   </div>
