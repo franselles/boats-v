@@ -103,7 +103,7 @@ const handleBooking = async () => {
             >Precios</a
           >
           <a href="#productos" class="hover:text-amber-500 transition mt-1.5"
-            >Flota</a
+            >Modelos</a
           >
           <a href="#normas" class="hover:text-amber-500 transition mt-1.5"
             >Normas</a
@@ -139,8 +139,7 @@ const handleBooking = async () => {
           Precios y Ubicaciones
         </h2>
         <p class="text-sm text-slate-600">
-          Elige el sector que mejor te venga para recoger tu hidropedal. Los
-          precios se obtienen directamente del sistema:
+          Elige el sector que mejor te venga para recoger tu hidropedal.
         </p>
 
         <!-- Bloque Playa de Levante -->
@@ -233,7 +232,7 @@ const handleBooking = async () => {
         <h2
           class="text-2xl font-bold text-purple-950 border-b-2 border-amber-500 pb-1"
         >
-          Nuestra Flota
+          Nuestros Modelos
         </h2>
         <p class="text-sm text-slate-600">
           Disponemos de equipamiento de primera calidad para que disfrutes del
@@ -479,7 +478,7 @@ const handleBooking = async () => {
             <UInput v-model="form.date" type="date" size="lg" required />
           </UFormField>
 
-          <UFormField label="Sector / Punto de Recogida">
+          <UFormField label="Sector / Punto de Reserva">
             <USelect
               v-model="form.sectorId"
               :items="listaSectores"
@@ -527,7 +526,7 @@ const handleBooking = async () => {
     <footer
       class="bg-slate-950 text-slate-400 text-center text-[11px] py-6 mt-12 border-t border-slate-900"
     >
-      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.2</p>
+      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.3</p>
       <p class="mt-0.5 text-slate-600 tracking-wider font-medium uppercase">
         Mantenimiento y Alquileres en Playa
       </p>
