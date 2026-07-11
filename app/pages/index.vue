@@ -119,7 +119,7 @@ const handleBooking = async () => {
 
     <section
       class="relative h-[55vh] flex items-center justify-center bg-cover bg-center"
-      style="background-image: url(&quot;/benidorm-beach.jpeg&quot;)"
+      style="background-image: url(/benidorm-beach.jpeg)"
     >
       <div
         class="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-900/40 to-transparent"
@@ -139,7 +139,7 @@ const handleBooking = async () => {
           Precios y Ubicaciones
         </h2>
         <p class="text-sm text-slate-600">
-          Elige el sector que mejor te venga para recoger tu hidropedal.
+          Elige el sector que mejor te venga para reservar tu hidropedal.
         </p>
 
         <!-- Bloque Playa de Levante -->
@@ -526,7 +526,7 @@ const handleBooking = async () => {
     <footer
       class="bg-slate-950 text-slate-400 text-center text-[11px] py-6 mt-12 border-t border-slate-900"
     >
-      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.5</p>
+      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.6</p>
       <p class="mt-0.5 text-slate-600 tracking-wider font-medium uppercase">
         Limpieza, Mantenimiento y Alquileres en Playa
       </p>
