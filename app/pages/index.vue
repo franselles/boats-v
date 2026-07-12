@@ -7,8 +7,15 @@ const form = ref({
   phone: "",
   date: "",
   hour: "",
-  sectorId: "",
+  sectorId: undefined,
 });
+
+type sector = {
+  id: number;
+  name: string;
+  location: string;
+  price: number;
+};
 
 const loading = ref(false);
 const statusMessage = ref({ text: "", type: "" });
@@ -19,21 +26,21 @@ const horasDisponibles = ["12", "13", "14", "15", "16", "17"];
 
 const sectoresLevante = computed(() => {
   if (!sectores.value) return [];
-  return sectores.value.filter((s: any) =>
+  return sectores.value.filter((s: sector) =>
     s.location.toLowerCase().includes("levante"),
   );
 });
 
 const sectoresPoniente = computed(() => {
   if (!sectores.value) return [];
-  return sectores.value.filter((s: any) =>
+  return sectores.value.filter((s: sector) =>
     s.location.toLowerCase().includes("poniente"),
   );
 });
 
 const listaSectores = computed(() => {
   if (!sectores.value) return [];
-  return sectores.value.map((s: any) => ({
+  return sectores.value.map((s: sector) => ({
     label: `${s.name} (${s.price}€/h)`,
     value: s.id,
   }));
@@ -68,7 +75,7 @@ const handleBooking = async () => {
       phone: "",
       date: "",
       hour: "",
-      sectorId: "",
+      sectorId: undefined,
     };
   } catch (error: any) {
     statusMessage.value = {
@@ -110,7 +117,7 @@ const handleBooking = async () => {
           >
           <a
             href="#reservar"
-            class="bg-amber-500 text-slate-950 px-3 py-1.5 rounded-full shadow-sm hover:bg-amber-600 transition"
+            class="bg-amber-500 text-slate-950 px-3 py-1.5 rounded-full shadow-sm hover:bg-amber-600 transition invisible"
             >Reservar</a
           >
         </nav>
@@ -331,8 +338,8 @@ const handleBooking = async () => {
           Normas de Uso y Seguridad
         </h2>
         <p class="text-sm text-slate-600">
-          Es totalmente obligatorio respetar el esquema oficial de navegación
-          para proteger a bañistas y usuarios:
+          Es <strong>totalmente obligatorio</strong> respetar el esquema oficial
+          de navegación para proteger a bañistas y usuarios:
         </p>
 
         <div class="bg-white p-3 rounded-2xl shadow-sm border border-slate-100">
@@ -352,8 +359,8 @@ const handleBooking = async () => {
               >✓</span
             >
             <p>
-              Mantenerse dentro de la zona asignada y siempre estar a la vista
-              del operario.
+              <strong>Mantenerse dentro de la zona asignada</strong> y siempre
+              estar a la vista del operario.
             </p>
           </div>
           <div
@@ -363,7 +370,10 @@ const handleBooking = async () => {
               class="bg-amber-500 text-slate-950 p-1 rounded-full font-bold text-[10px]"
               >✓</span
             >
-            <p>Hacer estricto caso de las indicaciones del operario.</p>
+            <p>
+              <strong>Hacer estricto caso</strong> de las indicaciones del
+              operario.
+            </p>
           </div>
           <div
             class="bg-white p-3 rounded-xl border border-slate-100 flex items-start gap-2.5 shadow-xs"
@@ -373,7 +383,8 @@ const handleBooking = async () => {
               >✓</span
             >
             <p>
-              Los menores de 18 años deberán ir acompañados de algún adulto.
+              <strong>Menores de 18 años</strong> deberán ir acompañados de
+              algún adulto.
             </p>
           </div>
           <div
@@ -446,19 +457,14 @@ const handleBooking = async () => {
 
         <form @submit.prevent="handleBooking" class="space-y-4">
           <UFormField label="Nombre del Cliente">
-            <UInput
-              v-model="form.name"
-              placeholder="Ej. Fran"
-              size="lg"
-              required
-            />
+            <UInput v-model="form.name" placeholder="Fran" size="lg" required />
           </UFormField>
 
           <UFormField label="Número de Teléfono">
             <UInput
               v-model="form.phone"
               type="tel"
-              placeholder="Ej. 600123456"
+              placeholder="600123456"
               size="lg"
               required
             />
@@ -526,7 +532,7 @@ const handleBooking = async () => {
     <footer
       class="bg-slate-950 text-slate-400 text-center text-[11px] py-6 mt-12 border-t border-slate-900"
     >
-      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.6</p>
+      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.7</p>
       <p class="mt-0.5 text-slate-600 tracking-wider font-medium uppercase">
         Limpieza, Mantenimiento y Alquileres en Playa
       </p>
