@@ -14,6 +14,8 @@ export default defineEventHandler(async (event) => {
       });
     }
 
+
+    /*
     // 2. Conversión de tipos para el nuevo esquema de Prisma
     const targetSectorId = parseInt(sectorId);
     const targetHour = parseInt(hour);
@@ -39,6 +41,12 @@ export default defineEventHandler(async (event) => {
       booking,
       message: "¡Reserva creada correctamente!"
     };
+    */
+
+    return {
+      success: false,
+      message: "No hay unidades disponibles para la fecha y hora seleccionadas."
+    };    
 
   } catch (error: any) {
     if (error.statusCode) throw error;

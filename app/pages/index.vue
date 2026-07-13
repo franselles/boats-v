@@ -57,7 +57,7 @@ const handleBooking = async () => {
   statusMessage.value = { text: "", type: "" };
 
   try {
-    await $fetch("/api/booking", {
+    const result = await $fetch("/api/booking", {
       method: "POST",
       body: {
         ...form.value,
@@ -65,10 +65,18 @@ const handleBooking = async () => {
       },
     });
 
-    statusMessage.value = {
-      text: "¡Reserva realizada con éxito! Nos vemos en la playa.",
-      type: "success",
-    };
+    if (result.success) {
+      statusMessage.value = {
+        text: "¡Reserva realizada con éxito! Nos vemos en la playa.",
+        type: "success",
+      };
+    } else {
+      statusMessage.value = {
+        text: result.message,
+        type: "error",
+      };
+    }
+
     form.value = {
       name: "",
       email: "",
@@ -453,6 +461,11 @@ const handleBooking = async () => {
           <p class="text-xs text-slate-500 mt-1">
             Elige tu sector y hora para reservar tu hidropedal.
           </p>
+          <p class="text-xs text-slate-500 mt-1">
+            Por favor, tenga en cuenta que mantenemos la reservada hasta 15
+            minutos después de la hora acordada. Pasado ese tiempo, la reserva
+            podría quedar liberada. Gracias por tu comprensión.
+          </p>
         </div>
 
         <form @submit.prevent="handleBooking" class="space-y-4">
@@ -532,7 +545,7 @@ const handleBooking = async () => {
     <footer
       class="bg-slate-950 text-slate-400 text-center text-[11px] py-6 mt-12 border-t border-slate-900"
     >
-      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.7</p>
+      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.8</p>
       <p class="mt-0.5 text-slate-600 tracking-wider font-medium uppercase">
         Limpieza, Mantenimiento y Alquileres en Playa
       </p>
