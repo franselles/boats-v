@@ -470,7 +470,12 @@ const handleBooking = async () => {
 
         <form @submit.prevent="handleBooking" class="space-y-4">
           <UFormField label="Nombre del Cliente">
-            <UInput v-model="form.name" placeholder="Fran" size="lg" required />
+            <UInput
+              v-model="form.name"
+              placeholder="Antonio"
+              size="lg"
+              required
+            />
           </UFormField>
 
           <UFormField label="Número de Teléfono">
@@ -545,7 +550,7 @@ const handleBooking = async () => {
     <footer
       class="bg-slate-950 text-slate-400 text-center text-[11px] py-6 mt-12 border-t border-slate-900"
     >
-      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.8</p>
+      <p>&copy; 2026 R.A. BENIDORM S.L. Todos los derechos reservados. 0.0.9</p>
       <p class="mt-0.5 text-slate-600 tracking-wider font-medium uppercase">
         Limpieza, Mantenimiento y Alquileres en Playa
       </p>
